@@ -7,20 +7,20 @@ import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
+    max-width: 700px;
 
-  .inner {
-    display: flex;
+    .inner {
+        display: flex;
 
-    @media (max-width: 600px) {
-      display: block;
+        @media (max-width: 600px) {
+            display: block;
+        }
+
+        // Prevent container from jumping
+        @media (min-width: 700px) {
+            min-height: 340px;
+        }
     }
-
-    // Prevent container from jumping
-    @media (min-width: 700px) {
-      min-height: 340px;
-    }
-  }
 `;
 
 const StyledTabList = styled.div`

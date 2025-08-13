@@ -31,9 +31,9 @@ const mixins = {
   `,
 
   flexBetween: css`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
   `,
 
   link: css`

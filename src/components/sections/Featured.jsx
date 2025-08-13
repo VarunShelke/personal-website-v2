@@ -1,18 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import sr from '@utils/sr';
-import { srConfig } from '@config';
-import { Icon } from '@components/icons';
-import { usePrefersReducedMotion } from '@hooks';
-import { useFeatured } from '@hooks/useData';
+import {srConfig} from '@config';
+import {Icon} from '@components/icons';
+import {usePrefersReducedMotion} from '@hooks';
+import {useFeatured} from '@hooks/useData';
 
 const StyledProjectsGrid = styled.ul`
-  ${({ theme }) => theme.mixins.resetList};
+    ${({theme}) => theme.mixins.resetList};
 
-  a {
-    position: relative;
-    z-index: 1;
-  }
+    a {
+        position: relative;
+        z-index: 1;
+    }
 `;
 
 const StyledProject = styled.li`
@@ -387,7 +387,7 @@ const Featured = () => {
                       loading="lazy"
                       onLoad={() => handleImageLoad(i)}
                       onError={(e) => {
-                        e.target.src = '/images/demo.png';
+                        e.target.src = '/images/diving-analytics-platform.png';
                         handleImageLoad(i);
                       }}
                     />

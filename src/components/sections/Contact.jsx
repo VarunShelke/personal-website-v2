@@ -1,68 +1,69 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
-import { srConfig } from '@config';
+import {srConfig} from '@config';
 import sr from '@utils/sr';
 
 const StyledContactSection = styled.section`
-  max-width: 600px;
-  margin: 0 auto 100px;
-  text-align: center;
+    max-width: 600px;
+    margin: 0 auto 100px;
+    text-align: center;
 
-  @media (max-width: 768px) {
-    margin: 0 auto 50px;
-  }
-
-  .overline {
-    display: block;
-    margin-bottom: 20px;
-    color: var(--green);
-    font-family: var(--font-mono);
-    font-size: var(--fz-md);
-    font-weight: 400;
-
-    &:before {
-      bottom: 0;
-      font-size: var(--fz-sm);
+    @media (max-width: 768px) {
+        margin: 0 auto 50px;
     }
 
-    &:after {
-      display: none;
+    .overline {
+        display: block;
+        margin-bottom: 20px;
+        color: var(--green);
+        font-family: var(--font-mono);
+        font-size: var(--fz-md);
+        font-weight: 400;
+
+        &:before {
+            bottom: 0;
+            font-size: var(--fz-sm);
+        }
+
+        &:after {
+            display: none;
+        }
     }
-  }
 
-  .title {
-    font-size: clamp(40px, 5vw, 60px);
-  }
+    .title {
+        font-size: clamp(40px, 5vw, 60px);
+    }
 
-  .email-link {
-    ${({ theme }) => theme.mixins.bigButton};
-    margin-top: 50px;
-  }
+    .email-link {
+        ${({theme}) => theme.mixins.bigButton};
+        margin-top: 50px;
+    }
 `;
 
 const Contact = () => {
-  const revealContainer = useRef(null);
+    const revealContainer = useRef(null);
 
-  useEffect(() => {
-    sr.reveal(revealContainer.current, srConfig());
-  }, []);
+    useEffect(() => {
+        sr.reveal(revealContainer.current, srConfig());
+    }, []);
 
-  return (
-    <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">What's Next?</h2>
+    return (
+        <StyledContactSection id="contact" ref={revealContainer}>
+            <h2 className="numbered-heading overline">What's Next?</h2>
 
-      <h2 className="title">Get In Touch</h2>
+            <h2 className="title">Get In Touch</h2>
 
-      <p>
-        Although I'm not currently looking for any new opportunities, my inbox is always open.
-        Whether you have a question or just want to say hi, I'll try my best to get back to you!
-      </p>
+            <p>
+                I will be graduating in <strong>Spring 2026</strong> and am actively seeking full-time opportunities
+                in <strong>Software Development</strong> or <strong>Generative AI</strong> development.
+                If you think my skills could be a good fit for your team, feel free to reach out - I’d love to connect!
+            </p>
 
-      <a className="email-link" href="mailto:Varun.Shelke@pitt.edu">
-        Say Hello
-      </a>
-    </StyledContactSection>
-  );
+            <a className="email-link" href="mailto:Varun.Shelke@pitt.edu">
+                Say Hello
+            </a>
+        </StyledContactSection>
+    );
 };
 
 export default Contact;
