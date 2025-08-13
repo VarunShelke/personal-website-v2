@@ -6,9 +6,9 @@ export const jobs = [
         range: 'May 2025 - Present',
         url: 'https://digital.pitt.edu/cio/cic',
         html: [
-            'developed a serverless, AI-enabled Diving Analytics Platform using Python, AWS CDK, and OCR/LLM pipelines, that automated the time-consuming process of analyzing diving training data',
-            'Built an AI-powered OCR and large language model pipeline that converts handwritten dive logs into structured CSV data, saving coaches ~3 hours of manual entry daily and enabling near real-time performance analysis.',
-            'Partnered with a cross-functional team to create mobile-friendly dashboards and automated workflows, delivering instant, actionable insights to coaches and improving athlete performance tracking and decision-making efficiency.'
+            'Engineered a cloud-native, AI-powered analytics platform using **AWS Bedrock, Lambda, and DynamoDB** to automate OCR + LLM processing of handwritten dive logs, reducing data entry time by 10 hours/week and enabling instant, structured performance insights.',
+            'Architected a **serverless, event-driven pipeline** with S3 triggers, API Gateway, and EventBridge for fully automated data ingestion and analysis, achieving **100% workflow automation** and eliminating manual intervention.',
+            '**Automated** infrastructure provisioning using **AWS CDK**, reducing environment **setup time by 50%** and ensuring consistent, reproducible deployments across multiple environments.'
         ]
     },
     {
