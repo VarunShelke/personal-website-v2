@@ -168,102 +168,102 @@ const StyledProject = styled.li`
 `;
 
 const Projects = () => {
-  const projects = useProjects();
-  const [showMore, setShowMore] = useState(false);
-  const revealTitle = useRef(null);
-  const revealArchiveLink = useRef(null);
-  const revealProjects = useRef([]);
+    const projects = useProjects();
+    const [showMore, setShowMore] = useState(false);
+    const revealTitle = useRef(null);
+    const revealArchiveLink = useRef(null);
+    const revealProjects = useRef([]);
 
-  useEffect(() => {
-    sr.reveal(revealTitle.current, srConfig());
-    sr.reveal(revealArchiveLink.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
-  }, []);
+    useEffect(() => {
+        sr.reveal(revealTitle.current, srConfig());
+        sr.reveal(revealArchiveLink.current, srConfig());
+        revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    }, []);
 
-  const GRID_LIMIT = 6;
-  const projectsToShow = showMore ? projects : projects.slice(0, GRID_LIMIT);
+    const GRID_LIMIT = 6;
+    const projectsToShow = showMore ? projects : projects.slice(0, GRID_LIMIT);
 
-  const projectInner = project => {
-    const { github, external, title, tech, html } = project;
+    const projectInner = project => {
+        const {github, external, title, tech, html} = project;
+
+        return (
+            <div className="project-inner">
+                <header>
+                    <div className="project-top">
+                        <div className="folder">
+                            <IconFolder/>
+                        </div>
+                        <div className="project-links">
+                            {github && (
+                                <a href={github} aria-label="GitHub Link">
+                                    <IconGitHub/>
+                                </a>
+                            )}
+                            {external && (
+                                <a href={external} aria-label="External Link" className="external">
+                                    <IconExternal/>
+                                </a>
+                            )}
+                        </div>
+                    </div>
+
+                    <h3 className="project-title">
+                        <a href={external || github || '#'}>{title}</a>
+                    </h3>
+
+                    <div className="project-description">
+                        <p>{html}</p>
+                    </div>
+                </header>
+
+                <footer>
+                    {tech && (
+                        <ul className="project-tech-list">
+                            {tech.map((tech, i) => (
+                                <li key={i}>{tech}</li>
+                            ))}
+                        </ul>
+                    )}
+                </footer>
+            </div>
+        );
+    };
 
     return (
-      <div className="project-inner">
-        <header>
-          <div className="project-top">
-            <div className="folder">
-              <IconFolder />
-            </div>
-            <div className="project-links">
-              {github && (
-                <a href={github} aria-label="GitHub Link">
-                  <IconGitHub />
-                </a>
-              )}
-              {external && (
-                <a href={external} aria-label="External Link" className="external">
-                  <IconExternal />
-                </a>
-              )}
-            </div>
-          </div>
+        <StyledProjectsSection>
+            <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
 
-          <h3 className="project-title">
-            <a href={external || github || '#'}>{title}</a>
-          </h3>
+            <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
+                view the archive
+            </Link>
 
-          <div className="project-description">
-            <p>{html}</p>
-          </div>
-        </header>
-
-        <footer>
-          {tech && (
-            <ul className="project-tech-list">
-              {tech.map((tech, i) => (
-                <li key={i}>{tech}</li>
-              ))}
+            <ul className="projects-grid">
+                <TransitionGroup component={null}>
+                    {projectsToShow &&
+                        projectsToShow.map((project, i) => (
+                            <CSSTransition
+                                key={i}
+                                classNames="fadeup"
+                                timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
+                                exit={false}>
+                                <StyledProject
+                                    key={i}
+                                    ref={el => (revealProjects.current[i] = el)}
+                                    style={{
+                                        transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
+                                    }}>
+                                    {projectInner(project)}
+                                </StyledProject>
+                            </CSSTransition>
+                        ))}
+                </TransitionGroup>
             </ul>
-          )}
-        </footer>
-      </div>
+
+            <button className="more-button" onClick={() => setShowMore(!showMore)}>
+                Show {showMore ? 'Less' : 'More'}
+            </button>
+        </StyledProjectsSection>
     );
-  };
-
-  return (
-    <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
-
-      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
-      </Link>
-
-      <ul className="projects-grid">
-        <TransitionGroup component={null}>
-          {projectsToShow &&
-            projectsToShow.map((project, i) => (
-              <CSSTransition
-                key={i}
-                classNames="fadeup"
-                timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                exit={false}>
-                <StyledProject
-                  key={i}
-                  ref={el => (revealProjects.current[i] = el)}
-                  style={{
-                    transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                  }}>
-                  {projectInner(project)}
-                </StyledProject>
-              </CSSTransition>
-            ))}
-        </TransitionGroup>
-      </ul>
-
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
-      </button>
-    </StyledProjectsSection>
-  );
 };
 
 export default Projects;

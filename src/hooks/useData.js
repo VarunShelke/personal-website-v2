@@ -1,24 +1,24 @@
-import { jobs, featured, projects } from '@data';
+import {jobs, featured, projects} from '@data';
 
 export const useJobs = () => {
-  return jobs;
+    return jobs;
 };
 
 export const useFeatured = () => {
-  return featured;
+    return featured;
 };
 
 export const useProjects = () => {
-  return projects.filter(project => project.showInProjects);
+    return projects.filter(project => project.showInProjects);
 };
 
 export const useAllProjects = () => {
-  return projects;
+    return projects;
 };
 
 export default {
-  useJobs,
-  useFeatured,
-  useProjects,
-  useAllProjects,
+    useJobs,
+    useFeatured,
+    useProjects,
+    useAllProjects,
 };
