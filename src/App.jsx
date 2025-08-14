@@ -1,21 +1,32 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {HelmetProvider} from 'react-helmet-async';
 import {ThemeProvider} from 'styled-components';
+import usePageTracking from "@hooks/usePageTracking.js";
 
-// Import theme and global styles
-import {theme, GlobalStyle} from '@styles';
+import {GlobalStyle, theme} from '@styles';
 
-// Import layout
-import {Layout, ErrorBoundary} from '@components';
+import {ErrorBoundary, Layout} from '@components';
 
-// Import pages
 import Home from '@pages/Home';
 import Archive from '@pages/Archive';
 import NotFound from '@pages/404';
 
+function TrackedRoutes() {
+    usePageTracking();
+
+    return (
+        <Layout>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/archive" element={<Archive/>}/>
+                <Route path="*" element={<NotFound/>}/>
+            </Routes>
+        </Layout>
+    );
+}
+
 function App() {
-    // CSS reset to ensure full width (needed for proper centering)
     React.useEffect(() => {
         const style = document.createElement('style');
         style.textContent = `
@@ -58,13 +69,7 @@ function App() {
                         }}
                     >
                         <Router>
-                            <Layout>
-                                <Routes>
-                                    <Route path="/" element={<Home/>}/>
-                                    <Route path="/archive" element={<Archive/>}/>
-                                    <Route path="*" element={<NotFound/>}/>
-                                </Routes>
-                            </Layout>
+                            <TrackedRoutes/>
                         </Router>
                     </div>
                 </ThemeProvider>
