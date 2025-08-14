@@ -6,9 +6,9 @@ export const jobs = [
         range: 'May 2025 - Present',
         url: 'https://digital.pitt.edu/cio/cic',
         html: [
-            'developed a serverless, AI-enabled Diving Analytics Platform using Python, AWS CDK, and OCR/LLM pipelines, that automated the time-consuming process of analyzing diving training data',
-            'Built an AI-powered OCR and large language model pipeline that converts handwritten dive logs into structured CSV data, saving coaches ~3 hours of manual entry daily and enabling near real-time performance analysis.',
-            'Partnered with a cross-functional team to create mobile-friendly dashboards and automated workflows, delivering instant, actionable insights to coaches and improving athlete performance tracking and decision-making efficiency.'
+            'Engineered a cloud-native, AI-powered analytics platform using **AWS Bedrock, Lambda, and DynamoDB** to automate OCR + LLM processing of handwritten dive logs, reducing data entry time by 10 hours/week and enabling instant, structured performance insights.',
+            'Architected a **serverless, event-driven pipeline** with S3 triggers, API Gateway, and EventBridge for fully automated data ingestion and analysis, achieving **100% workflow automation** and eliminating manual intervention.',
+            '**Automated** infrastructure provisioning using **AWS CDK**, reducing environment **setup time by 50%** and ensuring consistent, reproducible deployments across multiple environments.'
         ]
     },
     {
@@ -18,10 +18,9 @@ export const jobs = [
         range: 'September 2024 - April 2025',
         url: 'https://vml.pitt.edu/',
         html: [
-            'Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more',
-            'Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements',
-            'Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders',
-            'Provide leadership within the engineering department through close collaboration, knowledge shares, and mentorship'
+            '**Architected and deployed** end-to-end software solutions, including a Django web application on a **self-hosted Nginx server** and a **Raspberry Pi–driven e-ink display system**, optimizing infrastructure costs and **automating schedule management**.',
+            'Implemented **high-performance automation pipelines** leveraging ImageMagick for bulk photo segmentation and BeautifulSoup for dynamic web scraping, enabling real-time data processing and integration.',
+            '**Optimized** operational workflows, reducing **image preparation time by 70%** and **decreasing schedule-related inquiries by 80%**, resulting in measurable productivity **gains for academic research and administration**.'
         ]
     },
     {
@@ -31,10 +30,8 @@ export const jobs = [
         range: 'May 2022 - August 2024',
         url: 'https://www.nagarro.com/en/',
         html: [
-            'Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more',
-            'Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements',
-            'Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders',
-            'Provide leadership within the engineering department through close collaboration, knowledge shares, and mentorship'
+            'Led the enhancement of Fluent Order Management System by redesigning lead-time and fulfillment algorithms, implementing scalable solutions in production, which **reduced order cancellations by 85%**, **increased stock accessibility 10x**, and **cut delivery costs by 22%**.',
+            '**Automated shipping processes** by developing Cronjobs to integrate with “Shippit” and **established proactive bug-resolution workflows**, improving operational efficiency and reliability, resulting in **20% lower freight costs** and a **75% reduction in production incidents**.'
         ]
     },
     {
@@ -44,10 +41,8 @@ export const jobs = [
         range: 'November 2020 - May 2022',
         url: 'https://www.cognizant.com/us/en',
         html: [
-            'Developed and styled interactive web applications for Apple Music using Ember and SCSS',
-            'Built and shipped the Apple Music Extension for Facebook Messenger leveraging third-party and internal API integrations',
-            'Architected and implemented the user interface of Apple Music\'s embeddable web player widget for in-browser user authorization and full song playback',
-            'Contributed extensively to the creation of MusicKit JS, a public-facing JavaScript SDK for embedding Apple Music players into web applications'
+            'Designed and executed a robust integration strategy between Salesforce CRM and SAP Commerce  Cloud, implementing real-time data syncing and optimized data models, which improved cross department reporting accuracy and enhanced database efficiency.',
+            'Automated the product data import processes by integrating automatic import triggers to reduce manual errors and optimize workflows, achieving a **50% decrease in product data errors**.'
         ]
     }
 ];
