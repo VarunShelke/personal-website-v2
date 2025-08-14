@@ -6,7 +6,7 @@ export default function usePageTracking() {
 
     useEffect(() => {
         if (window.gtag) {
-            window.gtag("config", "G-VDWS2GT89P", {
+            window.gtag("config", "G-2T5D23Y46B", {
                 page_path: location.pathname + location.search,
             });
         }
