@@ -51,7 +51,7 @@ const StyledCredit = styled.div`
     a {
         padding: 10px;
     }
-    
+
 `;
 
 const Footer = () => {

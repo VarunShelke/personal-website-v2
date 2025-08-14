@@ -29,8 +29,8 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledSubtitle = styled.h2`
-  font-size: clamp(30px, 5vw, 50px);
-  font-weight: 400;
+    font-size: clamp(30px, 5vw, 50px);
+    font-weight: 400;
 `;
 
 const StyledHomeButton = styled(Link)`

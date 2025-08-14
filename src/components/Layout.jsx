@@ -1,78 +1,78 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import styled from 'styled-components';
-import { Loader, Nav, Social, Email, Footer } from '@components';
+import {Loader, Nav, Social, Email, Footer} from '@components';
 
 const StyledContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 `;
 
-const Layout = ({ children }) => {
-  const location = useLocation();
-  const isHome = location.pathname === '/';
-  const [isLoading, setIsLoading] = useState(isHome);
+const Layout = ({children}) => {
+    const location = useLocation();
+    const isHome = location.pathname === '/';
+    const [isLoading, setIsLoading] = useState(isHome);
 
-  // Sets target="_blank" rel="noopener noreferrer" on external links
-  const handleExternalLinks = () => {
-    const allLinks = Array.from(document.querySelectorAll('a'));
-    if (allLinks.length > 0) {
-      allLinks.forEach(link => {
-        if (link.host !== window.location.host) {
-          link.setAttribute('rel', 'noopener noreferrer');
-          link.setAttribute('target', '_blank');
+    // Sets target="_blank" rel="noopener noreferrer" on external links
+    const handleExternalLinks = () => {
+        const allLinks = Array.from(document.querySelectorAll('a'));
+        if (allLinks.length > 0) {
+            allLinks.forEach(link => {
+                if (link.host !== window.location.host) {
+                    link.setAttribute('rel', 'noopener noreferrer');
+                    link.setAttribute('target', '_blank');
+                }
+            });
         }
-      });
-    }
-  };
+    };
 
-  useEffect(() => {
-    if (isLoading) {
-      return;
-    }
-
-    if (location.hash) {
-      const id = location.hash.substring(1); // location.hash without the '#'
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView();
-          el.focus();
+    useEffect(() => {
+        if (isLoading) {
+            return;
         }
-      }, 0);
-    }
 
-    handleExternalLinks();
-  }, [isLoading, location.hash]);
+        if (location.hash) {
+            const id = location.hash.substring(1); // location.hash without the '#'
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.scrollIntoView();
+                    el.focus();
+                }
+            }, 0);
+        }
 
-  return (
-    <>
-      <a className="skip-to-content" href="#content">
-        Skip to Content
-      </a>
+        handleExternalLinks();
+    }, [isLoading, location.hash]);
 
-      {isLoading && isHome ? (
-        <Loader finishLoading={() => setIsLoading(false)} />
-      ) : (
-        <StyledContent>
-          <Nav isHome={isHome} />
-          <Social isHome={isHome} />
-          <Email isHome={isHome} />
+    return (
+        <>
+            <a className="skip-to-content" href="#content">
+                Skip to Content
+            </a>
 
-          <div id="content">
-            {children}
-            <Footer />
-          </div>
-        </StyledContent>
-      )}
-    </>
-  );
+            {isLoading && isHome ? (
+                <Loader finishLoading={() => setIsLoading(false)}/>
+            ) : (
+                <StyledContent>
+                    <Nav isHome={isHome}/>
+                    <Social isHome={isHome}/>
+                    <Email isHome={isHome}/>
+
+                    <div id="content">
+                        {children}
+                        <Footer/>
+                    </div>
+                </StyledContent>
+            )}
+        </>
+    );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 export default Layout;

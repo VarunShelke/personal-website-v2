@@ -1,7 +1,8 @@
 export const jobs = [
     {
         title: 'Backend Developer',
-        company: 'AWS Cloud Innovation Center',
+        company: 'AWS CIC',
+        companyLongText: 'AWS Cloud Innovation Center',
         location: 'Pittsburgh, PA',
         range: 'May 2025 - Present',
         url: 'https://digital.pitt.edu/cio/cic',
@@ -13,7 +14,8 @@ export const jobs = [
     },
     {
         title: 'Software Engineer',
-        company: 'Vibrant Media Lab',
+        company: 'VML',
+        companyLongText: 'Vibrant Media Lab',
         location: 'Pittsburgh, PA',
         range: 'September 2024 - April 2025',
         url: 'https://vml.pitt.edu/',
@@ -26,6 +28,7 @@ export const jobs = [
     {
         title: 'Engineer',
         company: 'Nagarro',
+        companyLongText: 'Nagarro',
         location: 'Pune, India',
         range: 'May 2022 - August 2024',
         url: 'https://www.nagarro.com/en/',
@@ -37,6 +40,7 @@ export const jobs = [
     {
         title: 'Programmer Analyst',
         company: 'Cognizant',
+        companyLongText: 'Cognizant Consulting',
         location: 'Pune, India',
         range: 'November 2020 - May 2022',
         url: 'https://www.cognizant.com/us/en',
