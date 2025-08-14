@@ -15,8 +15,7 @@ const StyledJobsSection = styled.section`
         @media (max-width: 600px) {
             display: block;
         }
-
-        // Prevent container from jumping
+        
         @media (min-width: 700px) {
             min-height: 340px;
         }
@@ -87,7 +86,7 @@ const StyledTabButton = styled.button`
     }
     @media (max-width: 600px) {
         ${({theme}) => theme.mixins.flexCenter};
-        min-width: 120px;
+        min-width: 110px;
         padding: 0 15px;
         border: none;
         border-bottom: 2px solid var(--lightest-navy);
@@ -254,7 +253,7 @@ const Jobs = () => {
                 <StyledTabPanels>
                     {jobs &&
                         jobs.map((job, i) => {
-                            const {title, url, company, range, html} = job;
+                            const {title, url, companyLongText, range, html} = job;
 
                             return (
                                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -270,7 +269,7 @@ const Jobs = () => {
                                             <span className="company">
                         &nbsp;@&nbsp;
                                                 <a href={url} className="inline-link">
-                          {company}
+                          {companyLongText}
                         </a>
                       </span>
                                         </h3>
