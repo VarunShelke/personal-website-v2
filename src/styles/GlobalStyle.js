@@ -28,22 +28,22 @@ const GlobalStyle = createGlobalStyle`
         background-color: var(--lightest-navy);
         color: var(--lightest-slate);
     }
-    
+
     :focus {
         outline: 2px dashed var(--green);
         outline-offset: 3px;
     }
-    
+
     :focus:not(:focus-visible) {
         outline: none;
         outline-offset: 0px;
     }
-    
+
     :focus-visible {
         outline: 2px dashed var(--green);
         outline-offset: 3px;
     }
-    
+
     html {
         scrollbar-width: thin;
         scrollbar-color: var(--dark-slate) var(--navy);
