@@ -176,9 +176,8 @@ const About = () => {
                             </a>{' '}
                             - An AI-powered platform that streamlines the analysis of diving training data.
                             Leveraging modern large language models (LLMs), it transforms unstructured training
-                            notes into structured, actionable insights. Built on a robust backend powered by AWS
-                            services like Lambda, Bedrock, and S3. The solution combines my expertise in Python,
-                            TypeScript, and AWS to deliver a scalable, high-performance application.
+                            notes into structured, actionable insights. Powered by AWS, leveraging Python and TypeScript
+                            to build scalable, high-performance applications.
                         </p>
 
                         <p>Here are a few technologies I’ve been working with recently:</p>
