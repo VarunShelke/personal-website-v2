@@ -10,6 +10,10 @@ const config = {
             name: 'Linkedin',
             url: 'https://www.linkedin.com/in/vashelke',
         },
+        {
+            name: 'Email',
+            url: 'mailto:Varun.Shelke@pitt.edu'
+        },
     ],
 
     navLinks: [
