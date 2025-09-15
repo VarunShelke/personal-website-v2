@@ -14,6 +14,10 @@ const config = {
             name: 'Email',
             url: 'mailto:Varun.Shelke@pitt.edu'
         },
+        {
+            name: 'BookMeeting',
+            url: 'https://outlook.office.com/bookwithme/user/f4d723afbee14b9993c04d434557e4bb@pitt.edu?anonymous&ismsaljsauthenabled&ep=plink'
+        },
     ],
 
     navLinks: [
