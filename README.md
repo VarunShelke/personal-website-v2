@@ -4,7 +4,7 @@ A modern, responsive personal portfolio website built with React and Vite, showc
 
 ## 🚀 Live Demo
 
-Visit the live website: [varunshelke.com](https://varunshelke.com)
+Visit the live website: [varunshelke.me](https://varunshelke.me)
 
 ## 📋 Project Description
 
@@ -282,10 +282,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 **Varun Shelke**
-- Website: [varunshelke.com](https://varunshelke.com)
+- Website: [varunshelke.me](https://www.varunshelke.me)
 - GitHub: [@VarunShelke](https://github.com/VarunShelke)
 - LinkedIn: [vashelke](https://www.linkedin.com/in/vashelke)
-- Email: Varun.Shelke@pitt.edu
+- Email: me@varunshelke.me
 
 ## 🙏 Acknowledgments
 

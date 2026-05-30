@@ -77,7 +77,7 @@ const Hero = () => {
     const five = (
         <a
             className="email-link"
-            href="mailto:Varun.Shelke@pitt.edu"
+            href="mailto:me@varunshelke.me"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Send email to Varun Shelke">

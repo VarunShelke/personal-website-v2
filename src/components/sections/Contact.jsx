@@ -1,6 +1,6 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import {srConfig} from '@config';
+import { srConfig } from '@config';
 import sr from '@utils/sr';
 
 const StyledContactSection = styled.section`
@@ -35,7 +35,7 @@ const StyledContactSection = styled.section`
     }
 
     .email-link {
-        ${({theme}) => theme.mixins.bigButton};
+        ${({ theme }) => theme.mixins.bigButton};
         margin-top: 50px;
     }
 `;
@@ -59,7 +59,7 @@ const Contact = () => {
                 If you think my skills could be a good fit for your team, feel free to reach out - I’d love to connect!
             </p>
 
-            <a className="email-link" href="mailto:Varun.Shelke@pitt.edu">
+            <a className="email-link" href="mailto:me@varunshelke.me">
                 Say Hello
             </a>
         </StyledContactSection>
