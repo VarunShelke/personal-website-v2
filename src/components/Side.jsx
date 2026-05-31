@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import {loaderDelay} from '@utils';
-import {usePrefersReducedMotion} from '@hooks';
+import { loaderDelay } from '@utils';
+import { usePrefersReducedMotion } from '@hooks';
 
 const StyledSideElement = styled.div`
     width: 40px;
@@ -24,7 +24,7 @@ const StyledSideElement = styled.div`
     }
 `;
 
-const Side = ({children, isHome, orientation}) => {
+const Side = ({ children, isHome, orientation }) => {
     const [isMounted, setIsMounted] = useState(!isHome);
     const prefersReducedMotion = usePrefersReducedMotion();
 

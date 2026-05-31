@@ -1,13 +1,13 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import sr from '@utils/sr';
-import {srConfig} from '@config';
-import {Icon} from '@components/icons';
-import {usePrefersReducedMotion} from '@hooks';
-import {useFeatured} from '@hooks/useData';
+import { srConfig } from '@config';
+import { Icon } from '@components/icons';
+import { usePrefersReducedMotion } from '@hooks';
+import { useFeatured } from '@hooks/useData';
 
 const StyledProjectsGrid = styled.ul`
-    ${({theme}) => theme.mixins.resetList};
+    ${({ theme }) => theme.mixins.resetList};
 
     a {
         position: relative;
@@ -23,7 +23,7 @@ const StyledProject = styled.li`
     align-items: center;
 
     @media (max-width: 768px) {
-        ${({theme}) => theme.mixins.boxShadow};
+        ${({ theme }) => theme.mixins.boxShadow};
     }
 
     &:not(:last-of-type) {
@@ -154,7 +154,7 @@ const StyledProject = styled.li`
     }
 
     .project-description {
-        ${({theme}) => theme.mixins.boxShadow};
+        ${({ theme }) => theme.mixins.boxShadow};
         position: relative;
         z-index: 2;
         padding: 25px;
@@ -174,7 +174,7 @@ const StyledProject = styled.li`
         }
 
         a {
-            ${({theme}) => theme.mixins.inlineLink};
+            ${({ theme }) => theme.mixins.inlineLink};
         }
 
         strong {
@@ -219,7 +219,7 @@ const StyledProject = styled.li`
         color: var(--lightest-slate);
 
         a {
-            ${({theme}) => theme.mixins.flexCenter};
+            ${({ theme }) => theme.mixins.flexCenter};
             padding: 10px;
 
             &.external {
@@ -237,13 +237,13 @@ const StyledProject = styled.li`
         }
 
         .cta {
-            ${({theme}) => theme.mixins.smallButton};
+            ${({ theme }) => theme.mixins.smallButton};
             margin: 10px;
         }
     }
 
     .project-image {
-        ${({theme}) => theme.mixins.boxShadow};
+        ${({ theme }) => theme.mixins.boxShadow};
         grid-column: 6 / -1;
         grid-row: 1 / -1;
         position: relative;
@@ -336,7 +336,7 @@ const Featured = () => {
             <StyledProjectsGrid>
                 {featuredProjects &&
                     featuredProjects.map((project, i) => {
-                        const {external, title, tech, github, cover, html, cta} = project;
+                        const { external, title, tech, github, cover, html, cta } = project;
 
                         return (
                             <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -350,7 +350,7 @@ const Featured = () => {
 
                                         <div
                                             className="project-description"
-                                            dangerouslySetInnerHTML={{__html: html}}
+                                            dangerouslySetInnerHTML={{ __html: html }}
                                         />
 
                                         {tech.length && (
@@ -364,18 +364,18 @@ const Featured = () => {
                                         <div className="project-links">
                                             {github && (
                                                 <a href={github} aria-label="GitHub Link">
-                                                    <Icon name="GitHub"/>
+                                                    <Icon name="GitHub" />
                                                 </a>
                                             )}
                                             {external && (
                                                 <a href={external} aria-label="External Link" className="external"
-                                                   target="_blank">
-                                                    <Icon name="External"/>
+                                                    target="_blank">
+                                                    <Icon name="External" />
                                                 </a>
                                             )}
                                             {cta && (
                                                 <a href={cta} aria-label="Course" className="cta" target="_blank"
-                                                   rel="noreferrer">
+                                                    rel="noreferrer">
                                                     Know More
                                                 </a>
                                             )}

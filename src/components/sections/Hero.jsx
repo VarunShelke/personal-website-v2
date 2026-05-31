@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import {usePrefersReducedMotion} from '@hooks';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { usePrefersReducedMotion } from '@hooks';
 
 const StyledHeroSection = styled.section`
-    ${({theme}) => theme.mixins.flexCenter};
+    ${({ theme }) => theme.mixins.flexCenter};
     flex-direction: column;
     align-items: flex-start;
     min-height: 100vh;
@@ -40,7 +40,7 @@ const StyledHeroSection = styled.section`
     }
 
     .email-link {
-        ${({theme}) => theme.mixins.bigButton};
+        ${({ theme }) => theme.mixins.bigButton};
         margin-top: 50px;
     }
 `;
@@ -64,13 +64,13 @@ const Hero = () => {
     const four = (
         <>
             <p>
-                I’m a software engineer specializing in building scalable, high-performance backend systems
-                that power exceptional digital experiences. Currently, I’m focused on building AI powered
-                open source Health Sciences and Sports Analytics solutions at{' '}
-                <a href="https://digital.pitt.edu/cio/cic" target="_blank" rel="noreferrer">
-                    AWS Cloud Innovation Center
+                I'm a software engineer specializing in building scalable, high-performance backend systems
+                that power exceptional digital experiences. Currently, I'm working as an AI Solutions Architect
+                at{' '}
+                <a href="https://digital.pitt.edu" target="_blank" rel="noreferrer">
+                    Pitt Digital
                 </a>
-                .
+                , where I design and deliver AI-powered solutions across the University of Pittsburgh.
             </p>
         </>
     );
@@ -100,7 +100,7 @@ const Hero = () => {
                     {isMounted &&
                         items.map((item, i) => (
                             <CSSTransition key={i} classNames="fadeup" timeout={2000}>
-                                <div style={{transitionDelay: `${i + 1}00ms`}}>{item}</div>
+                                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
                             </CSSTransition>
                         ))}
                 </TransitionGroup>

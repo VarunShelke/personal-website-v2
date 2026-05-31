@@ -1,9 +1,9 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import {CSSTransition} from 'react-transition-group';
-import {useJobs} from '@hooks/useData';
-import {srConfig} from '@config';
-import {KEY_CODES} from '@utils';
+import { CSSTransition } from 'react-transition-group';
+import { useJobs } from '@hooks/useData';
+import { srConfig } from '@config';
+import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
 
 const StyledJobsSection = styled.section`
@@ -66,7 +66,7 @@ const StyledTabList = styled.div`
 `;
 
 const StyledTabButton = styled.button`
-    ${({theme}) => theme.mixins.link};
+    ${({ theme }) => theme.mixins.link};
     display: flex;
     align-items: center;
     width: 100%;
@@ -75,7 +75,7 @@ const StyledTabButton = styled.button`
     border: none;
     border-left: 2px solid var(--lightest-navy);
     background-color: transparent;
-    color: ${({isActive}) => (isActive ? 'var(--green)' : 'var(--slate)')};
+    color: ${({ isActive }) => (isActive ? 'var(--green)' : 'var(--slate)')};
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
     text-align: left;
@@ -85,7 +85,7 @@ const StyledTabButton = styled.button`
         padding: 0 15px 2px;
     }
     @media (max-width: 600px) {
-        ${({theme}) => theme.mixins.flexCenter};
+        ${({ theme }) => theme.mixins.flexCenter};
         min-width: 110px;
         padding: 0 15px;
         border: none;
@@ -108,7 +108,7 @@ const StyledHighlight = styled.div`
     height: var(--tab-height);
     border-radius: var(--border-radius);
     background: var(--green);
-    transform: translateY(calc(${({activeTabId}) => activeTabId} * var(--tab-height)));
+    transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
     transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition-delay: 0.1s;
 
@@ -119,7 +119,7 @@ const StyledHighlight = styled.div`
         max-width: var(--tab-width);
         height: 2px;
         margin-left: 50px;
-        transform: translateX(calc(${({activeTabId}) => activeTabId} * var(--tab-width)));
+        transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
     }
     @media (max-width: 480px) {
         margin-left: 25px;
@@ -142,7 +142,7 @@ const StyledTabPanel = styled.div`
     padding: 10px 5px;
 
     ul {
-        ${({theme}) => theme.mixins.fancyList};
+        ${({ theme }) => theme.mixins.fancyList};
     }
 
     h3 {
@@ -230,7 +230,7 @@ const Jobs = () => {
                 <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={onKeyDown}>
                     {jobs &&
                         jobs.map((job, i) => {
-                            const {company} = job;
+                            const { company } = job;
 
                             return (
                                 <StyledTabButton
@@ -247,13 +247,13 @@ const Jobs = () => {
                                 </StyledTabButton>
                             );
                         })}
-                    <StyledHighlight activeTabId={activeTabId}/>
+                    <StyledHighlight activeTabId={activeTabId} />
                 </StyledTabList>
 
                 <StyledTabPanels>
                     {jobs &&
                         jobs.map((job, i) => {
-                            const {title, url, companyLongText, range, html} = job;
+                            const { title, url, companyLongText, range, html } = job;
 
                             return (
                                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -267,11 +267,11 @@ const Jobs = () => {
                                         <h3>
                                             <span>{title}</span>
                                             <span className="company">
-                        &nbsp;@&nbsp;
+                                                &nbsp;@&nbsp;
                                                 <a href={url} className="inline-link">
-                          {companyLongText}
-                        </a>
-                      </span>
+                                                    {companyLongText}
+                                                </a>
+                                            </span>
                                         </h3>
 
                                         <p className="range">{range}</p>

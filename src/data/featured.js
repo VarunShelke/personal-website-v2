@@ -1,5 +1,15 @@
 export const featured = [
     {
+        title: 'Survey Analysis Agent',
+        cover: '/images/diving-analytics-platform.png',
+        external: '',
+        cta: 'https://www.digital.pitt.edu/news/success-stories/how-pitt-cic-helping-pitt-athletics-turn-fan-feedback-better-game-day',
+        github: 'https://github.com/pitt-cic/survey-analysis-agent',
+        tech: ['Python', 'React', 'Pydantic-AI', 'AWS Bedrock', 'AWS Lambda'],
+        html: 'An AI-powered semantic search tool for analyzing customer survey responses using natural language queries. ',
+        date: '2026-02-26'
+    },
+    {
         title: 'Diving Analytics Platform',
         cover: '/images/diving-analytics-platform.png',
         external: '',
@@ -18,16 +28,6 @@ export const featured = [
         tech: ['Python', 'AWS Bedrock', 'Streamlit', 'AWS ECS and ECR', 'AWS Textract'],
         html: 'A lightweight AI tool powered by AWS Bedrock that simplifies clinical notes instantly.',
         date: '2025-05-01'
-    },
-    {
-        title: 'Verse Vibe',
-        cover: '/images/Verse-Vibe.png',
-        external: '',
-        cta: '/verse-vibe.pdf',
-        github: 'https://github.com/VarunShelke/Verse-Vibe',
-        tech: ['Spotify API', 'Spring Boot', 'Elasticsearch', 'Docker', 'React'],
-        html: 'VerseVibe lets users discover and play songs using just a snippet of lyrics. Powered by Genius Lyrics and integrated with Spotify, it transforms any lyric you remember into the exact track, making music discovery effortless and fun.',
-        date: '2024-12-01'
     }
 ];
 

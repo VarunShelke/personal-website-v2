@@ -1,11 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import {useProjects} from '@hooks/useData';
-import {srConfig} from '@config';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { useProjects } from '@hooks/useData';
+import { srConfig } from '@config';
 import sr from '@utils/sr';
-import {IconExternal, IconFolder, IconGitHub} from '@components/icons';
+import { IconExternal, IconFolder, IconGitHub } from '@components/icons';
 
 const StyledProjectsSection = styled.section`
     display: flex;
@@ -26,7 +26,7 @@ const StyledProjectsSection = styled.section`
     }
 
     .projects-grid {
-        ${({theme}) => theme.mixins.resetList};
+        ${({ theme }) => theme.mixins.resetList};
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-gap: 15px;
@@ -39,7 +39,7 @@ const StyledProjectsSection = styled.section`
     }
 
     .more-button {
-        ${({theme}) => theme.mixins.button};
+        ${({ theme }) => theme.mixins.button};
         margin: 80px auto 0;
     }
 `;
@@ -64,8 +64,8 @@ const StyledProject = styled.li`
     }
 
     .project-inner {
-        ${({theme}) => theme.mixins.boxShadow};
-        ${({theme}) => theme.mixins.flexBetween};
+        ${({ theme }) => theme.mixins.boxShadow};
+        ${({ theme }) => theme.mixins.flexBetween};
         flex-direction: column;
         align-items: flex-start;
         position: relative;
@@ -78,7 +78,7 @@ const StyledProject = styled.li`
     }
 
     .project-top {
-        ${({theme}) => theme.mixins.flexBetween};
+        ${({ theme }) => theme.mixins.flexBetween};
         margin-bottom: 35px;
 
         .folder {
@@ -97,7 +97,7 @@ const StyledProject = styled.li`
             color: var(--light-slate);
 
             a {
-                ${({theme}) => theme.mixins.flexCenter};
+                ${({ theme }) => theme.mixins.flexCenter};
                 padding: 5px 7px;
 
                 &.external {
@@ -142,7 +142,7 @@ const StyledProject = styled.li`
         font-size: 17px;
 
         a {
-            ${({theme}) => theme.mixins.inlineLink};
+            ${({ theme }) => theme.mixins.inlineLink};
         }
     }
 
@@ -184,24 +184,24 @@ const Projects = () => {
     const projectsToShow = showMore ? projects : projects.slice(0, GRID_LIMIT);
 
     const projectInner = project => {
-        const {github, external, title, tech, html} = project;
+        const { github, external, title, tech, html } = project;
 
         return (
             <div className="project-inner">
                 <header>
                     <div className="project-top">
                         <div className="folder">
-                            <IconFolder/>
+                            <IconFolder />
                         </div>
                         <div className="project-links">
                             {github && (
                                 <a href={github} aria-label="GitHub Link">
-                                    <IconGitHub/>
+                                    <IconGitHub />
                                 </a>
                             )}
                             {external && (
                                 <a href={external} aria-label="External Link" className="external">
-                                    <IconExternal/>
+                                    <IconExternal />
                                 </a>
                             )}
                         </div>

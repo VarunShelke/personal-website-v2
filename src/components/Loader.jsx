@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {Helmet} from 'react-helmet-async';
+import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 import styled from 'styled-components';
-import {IconLoader} from '@components/icons';
+import { IconLoader } from '@components/icons';
 
 const StyledLoader = styled.div`
-    ${({theme}) => theme.mixins.flexCenter};
+    ${({ theme }) => theme.mixins.flexCenter};
     position: fixed;
     top: 0;
     bottom: 0;
@@ -38,7 +38,7 @@ const StyledLoader = styled.div`
     }
 `;
 
-const Loader = ({finishLoading}) => {
+const Loader = ({ finishLoading }) => {
     const [isMounted, setIsMounted] = useState(false);
 
     const animate = () => {
@@ -85,10 +85,10 @@ const Loader = ({finishLoading}) => {
 
     return (
         <StyledLoader className="loader" $isMounted={isMounted}>
-            <Helmet bodyAttributes={{class: `hidden`}}/>
+            <Helmet bodyAttributes={{ class: `hidden` }} />
 
             <div className="logo-wrapper">
-                <IconLoader/>
+                <IconLoader />
             </div>
         </StyledLoader>
     );

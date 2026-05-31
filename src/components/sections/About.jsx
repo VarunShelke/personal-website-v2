@@ -1,6 +1,6 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import {srConfig} from '@config';
+import { srConfig } from '@config';
 import sr from '@utils/sr';
 
 const StyledAboutSection = styled.section`
@@ -56,7 +56,7 @@ const StyledPic = styled.div`
     }
 
     .wrapper {
-        ${({theme}) => theme.mixins.boxShadow};
+        ${({ theme }) => theme.mixins.boxShadow};
         display: block;
         position: relative;
         width: 100%;

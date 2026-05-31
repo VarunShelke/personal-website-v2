@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {Icon} from '@components/icons';
+import { Icon } from '@components/icons';
 import config from '@config';
 
-const {socialMedia} = config;
+const { socialMedia } = config;
 
 const StyledFooter = styled.footer`
-    ${({theme}) => theme.mixins.flexCenter};
+    ${({ theme }) => theme.mixins.flexCenter};
     flex-direction: column;
     height: auto;
     min-height: 70px;
@@ -26,7 +26,7 @@ const StyledSocialLinks = styled.div`
     }
 
     ul {
-        ${({theme}) => theme.mixins.flexBetween};
+        ${({ theme }) => theme.mixins.flexBetween};
         padding: 0;
         margin: 0;
         list-style: none;
@@ -60,10 +60,10 @@ const Footer = () => {
             <StyledSocialLinks>
                 <ul>
                     {socialMedia &&
-                        socialMedia.map(({name, url}, i) => (
+                        socialMedia.map(({ name, url }, i) => (
                             <li key={i}>
                                 <a href={url} aria-label={name}>
-                                    <Icon name={name}/>
+                                    <Icon name={name} />
                                 </a>
                             </li>
                         ))}

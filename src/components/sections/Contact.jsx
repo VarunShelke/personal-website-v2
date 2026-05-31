@@ -54,9 +54,8 @@ const Contact = () => {
             <h2 className="title">Get In Touch</h2>
 
             <p>
-                I will be graduating in <strong>Spring 2026</strong> and am actively seeking full-time opportunities
-                in <strong>Software Development</strong> or <strong>Generative AI</strong> development.
-                If you think my skills could be a good fit for your team, feel free to reach out - I’d love to connect!
+                I’m always curious to learn and open to conversations — so whether you’d like to
+                collaborate, share ideas, or just chat, feel free to reach out. I’d love to connect!
             </p>
 
             <a className="email-link" href="mailto:me@varunshelke.me">

@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import {Loader, Nav, Social, Email, Footer} from '@components';
+import { Loader, Nav, Social, Email, Footer } from '@components';
 
 const StyledContent = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ const StyledContent = styled.div`
     min-height: 100vh;
 `;
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
     const location = useLocation();
     const isHome = location.pathname === '/';
     const [isLoading, setIsLoading] = useState(isHome);
@@ -54,16 +54,16 @@ const Layout = ({children}) => {
             </a>
 
             {isLoading && isHome ? (
-                <Loader finishLoading={() => setIsLoading(false)}/>
+                <Loader finishLoading={() => setIsLoading(false)} />
             ) : (
                 <StyledContent>
-                    <Nav isHome={isHome}/>
-                    <Social isHome={isHome}/>
-                    <Email isHome={isHome}/>
+                    <Nav isHome={isHome} />
+                    <Social isHome={isHome} />
+                    <Email isHome={isHome} />
 
                     <div id="content">
                         {children}
-                        <Footer/>
+                        <Footer />
                     </div>
                 </StyledContent>
             )}

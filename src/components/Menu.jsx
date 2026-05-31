@@ -19,7 +19,7 @@ const StyledHamburgerButton = styled.button`
     display: none;
 
     @media (max-width: 768px) {
-        ${({theme}) => theme.mixins.flexCenter};
+        ${({ theme }) => theme.mixins.flexCenter};
         position: relative;
         z-index: 10;
         margin-right: -15px;
@@ -76,15 +76,15 @@ const StyledHamburgerButton = styled.button`
             width: ${props => (props.menuOpen ? `100%` : `120%`)};
             top: ${props => (props.menuOpen ? `0` : `-10px`)};
             opacity: ${props => (props.menuOpen ? 0 : 1)};
-            transition: ${({menuOpen}) =>
-                    menuOpen ? 'var(--ham-before-active)' : 'var(--ham-before)'};
+            transition: ${({ menuOpen }) =>
+    menuOpen ? 'var(--ham-before-active)' : 'var(--ham-before)'};
         }
 
         &:after {
             width: ${props => (props.menuOpen ? `100%` : `80%`)};
             bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
             transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-            transition: ${({menuOpen}) => (menuOpen ? 'var(--ham-after-active)' : 'var(--ham-after)')};
+            transition: ${({ menuOpen }) => (menuOpen ? 'var(--ham-after-active)' : 'var(--ham-after)')};
         }
     }
 `;

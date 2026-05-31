@@ -1,12 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import {HelmetProvider} from 'react-helmet-async';
-import {ThemeProvider} from 'styled-components';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { ThemeProvider } from 'styled-components';
 import usePageTracking from "@hooks/usePageTracking.js";
 
-import {GlobalStyle, theme} from '@styles';
+import { GlobalStyle, theme } from '@styles';
 
-import {ErrorBoundary, Layout} from '@components';
+import { ErrorBoundary, Layout } from '@components';
 
 import Home from '@pages/Home';
 import Archive from '@pages/Archive';
@@ -18,9 +18,9 @@ function TrackedRoutes() {
     return (
         <Layout>
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/archive" element={<Archive/>}/>
-                <Route path="*" element={<NotFound/>}/>
+                <Route path="/" element={<Home />} />
+                <Route path="/archive" element={<Archive />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </Layout>
     );
@@ -54,7 +54,7 @@ function App() {
         <ErrorBoundary>
             <HelmetProvider>
                 <ThemeProvider theme={theme}>
-                    <GlobalStyle/>
+                    <GlobalStyle />
                     <div
                         id="root"
                         style={{
@@ -69,7 +69,7 @@ function App() {
                         }}
                     >
                         <Router>
-                            <TrackedRoutes/>
+                            <TrackedRoutes />
                         </Router>
                     </div>
                 </ThemeProvider>
